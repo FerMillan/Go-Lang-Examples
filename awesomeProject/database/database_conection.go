@@ -152,7 +152,7 @@ func ExampleStillMoreHardQueryUseORM() {
 	wrapperForJoinQuery := WrapperForJoinQuery{}
 
 	err = models.NewQuery(
-		qm.Select("tr.*", "tu.*"),
+		qm.Select("tr.*, tu.*"),
 		qm.From("tbl_referralcodes tr"),
 		qm.InnerJoin("tbl_users tu ON tr.user_id = tu.id"),
 		qm.Where("tu.mobile IS NULL"),
