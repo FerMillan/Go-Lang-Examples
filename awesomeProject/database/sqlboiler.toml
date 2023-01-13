@@ -1,0 +1,13 @@
+output   = "models"
+wipe     = true
+no-tests = true
+add-enum-types = true
+
+[mysql]
+  dbname  = "saldogra_sandbox"
+  host    = "sandbox.cpi0yoqzrjqz.us-west-1.rds.amazonaws.com"
+  port    = 3306
+  user    = "saldogra_naveen"
+  pass    = "gyns22M2km8B"
+  sslmode = "false"
+  whitelist = ["tbl_referralcodes", "tbl_users", "referralcode_rejection_reason","tbl_config"]
