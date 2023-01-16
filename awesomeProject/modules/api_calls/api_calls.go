@@ -50,8 +50,8 @@ func Post() string {
 	method := "POST"
 
 	payload := strings.NewReader(`{
-		"email":"oscar.millan@undostres.com.mx",
-		"password":"Deaththekid1#"
+		"email":"your email",
+		"password":"your pass"
 	}`)
 
 	client := &http.Client{}
@@ -60,7 +60,7 @@ func Post() string {
 	if err != nil {
 		return err.Error()
 	}
-	req.Header.Add("SESSID", "9292aa9bfebf1ce000880325f439588c")
+	req.Header.Add("SESSID", "your session id")
 	req.Header.Add("Content-Type", "application/json")
 
 	res, err := client.Do(req)

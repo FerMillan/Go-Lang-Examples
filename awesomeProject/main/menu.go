@@ -38,8 +38,8 @@ func menu() {
 		"5 -- Example of concurrency (hilos)\n" +
 		"6 -- Example of database (database)\n" +
 		"7 -- Example of api get (get)\n" +
-		"8 -- Way to check if a key in a map exist (map_exist)\n" +
-		"9 -- Example of api post (post)\n" +
+		"8 -- Example of api post (post)\n" +
+		"9 -- Way to check if a key in a map exist (map_exist)\n" +
 		"salir -- Exit of menu\n" +
 		"\nIngrese una entrada:")
 	fmt.Scanln(&metodo)
@@ -91,12 +91,12 @@ func menu() {
 		fmt.Println(api_calls.Get())
 	case "8":
 		fallthrough
-	case "map_exist":
-		solveDoubts.ExistKeyInMap()
-	case "9":
-		fallthrough
 	case "post":
 		fmt.Println(api_calls.Post())
+	case "9":
+		fallthrough
+	case "map_exist":
+		solveDoubts.ExistKeyInMap()
 	default:
 		fmt.Println("Función no añadida Intentelo de nuevo\n----------------------\n\n")
 		menu() // Recursive call to access again to the menu if this is required
