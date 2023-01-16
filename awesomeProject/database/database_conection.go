@@ -143,10 +143,21 @@ func ExampleStillMoreHardQueryUseORM() {
 		"AND tu.facebookid = '' " +
 		"LIMIT 1")
 
-	// Once again, use a bound struct
+	// We can define new structure with only the colums that we get from the query per each table
+	type TBLUserColumns struct {
+		ID    int
+		Email string
+	}
+	// We can define new structure with only the colums that we get from the query per each table
+	type TBLReferralcodesColumns struct {
+		UserID       int
+		Referralcode string
+	}
+
+	// Once again, use a bound struct (To store the tables in the query)
 	type WrapperForJoinQuery struct {
-		TblUser          models.TBLUser         `boil:"tbl_users,bind"`
-		TblReferralcodes models.TBLReferralcode `boil:"tbl_referralcodes,bind"`
+		TblUser          TBLUserColumns          `boil:"tbl_users,bind"`
+		TblReferralcodes TBLReferralcodesColumns `boil:"tbl_referralcodes,bind"`
 	}
 
 	wrapperForJoinQuery := WrapperForJoinQuery{}
