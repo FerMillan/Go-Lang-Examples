@@ -5,6 +5,7 @@ go 1.19
 require (
 	github.com/friendsofgo/errors v0.9.2
 	github.com/go-sql-driver/mysql v1.6.0
+	github.com/gorilla/mux v1.8.0
 	github.com/volatiletech/null v8.0.0+incompatible
 	github.com/volatiletech/null/v8 v8.1.2
 	github.com/volatiletech/sqlboiler v3.7.1+incompatible

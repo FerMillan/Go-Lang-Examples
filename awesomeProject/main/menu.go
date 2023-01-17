@@ -2,6 +2,7 @@ package main
 
 import (
 	"awesomeProject/database"
+	"awesomeProject/microservices"
 	"awesomeProject/modules/api_calls"
 	"awesomeProject/modules/aritmetic"
 	"awesomeProject/modules/concurrency"
@@ -40,6 +41,7 @@ func menu() {
 		"7 -- Example of api get (get)\n" +
 		"8 -- Example of api post (post)\n" +
 		"9 -- Way to check if a key in a map exist (map_exist)\n" +
+		"10 -- Example of api post (mux)\n" +
 		"salir -- Exit of menu\n" +
 		"\nIngrese una entrada:")
 	fmt.Scanln(&metodo)
@@ -97,6 +99,12 @@ func menu() {
 		fallthrough
 	case "map_exist":
 		solveDoubts.ExistKeyInMap()
+	case "10":
+		fallthrough
+	case "mux":
+		fmt.Println("Run Server With Mux: localhost:9091")
+		microservices.RunConnection()
+		fmt.Println("Finish Connection")
 	default:
 		fmt.Println("Función no añadida Intentelo de nuevo\n----------------------\n\n")
 		menu() // Recursive call to access again to the menu if this is required
